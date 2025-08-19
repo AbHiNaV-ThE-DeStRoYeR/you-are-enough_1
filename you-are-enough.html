@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>You are enough</title>
+  <meta name="description" content="A simple page repeating the affirmation: you are enough." />
+  <meta name="theme-color" content="#000000" />
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .wrap {
+      width: min(1100px, 92vw);
+      padding: 32px;
+      text-align: center;
+    }
+    .line {
+      display: block;
+      font-size: clamp(20px, 4vw, 56px);
+      line-height: 1.25;
+      margin: 8px 0;
+      opacity: 0.95;
+      letter-spacing: 0.5px;
+      text-transform: lowercase;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap" class="wrap" aria-live="polite" aria-busy="true">
+    <h1 class="sr-only">You are enough</h1>
+  </div>
+  <script>
+    const wrap = document.getElementById('wrap');
+    for (let i = 0; i < 500; i++) {
+      const span = document.createElement('span');
+      span.className = 'line';
+      span.textContent = 'you are enough';
+      wrap.appendChild(span);
+    }
+    wrap.setAttribute('aria-busy', 'false');
+  </script>
+</body>
+</html>
